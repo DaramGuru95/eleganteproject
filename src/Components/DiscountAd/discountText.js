@@ -1,0 +1,1 @@
+export const discountText= 'GET 10% OFF YOUR FIRST ORDER '
