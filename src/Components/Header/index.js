@@ -2,7 +2,6 @@ import {   Box, Typography } from "@mui/material";
 import Divider from '@mui/material/Divider';
 import React from "react";
 import Logo from "../../../src/assets/header/ColouredELogo-01.svg";
-import theme from "../../Theme";
 
 import SearchIcon from '@mui/icons-material/Search';
 import PermIdentityOutlinedIcon from '@mui/icons-material/PermIdentityOutlined';
@@ -15,9 +14,9 @@ export default function Header() {
       <img src={Logo} alt="logo" />
       <Box
         sx={{
-          backgroundColor: theme.palette.input.main,
+          backgroundColor:'#1018200D',
           borderRadius: 5,
-          borderColor: theme.palette.input.main,
+          borderColor: '#1018200D',
         }}
         display={'flex'}
         alignItems={'center'}
@@ -25,7 +24,7 @@ export default function Header() {
         width={"35%"}
         height={"5vh"}
       >
-        <input style={{width:'80%',border:'none',backgroundColor:theme.palette.input.main}} />
+        <input style={{width:'80%',border:'none',backgroundColor:'#1018200D'}} />
         <SearchIcon  sx={{padding:1}} />
       </Box>
       <Box display={'flex'} gap={2}>

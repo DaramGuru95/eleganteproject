@@ -17,21 +17,26 @@ import {
 import { specialOfferData } from "./Components/Discover/data";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
+import CollectionBanner from "./Components/Banner2";
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
+    // <ThemeProvider theme={theme}>
+    <>
       <TopNavigation />
       <Header />
       <MainNavigation />
       <Discount />
       <Banner />
       <Trending />
+      <Box>
       <CarousalComponent
         header={"Discover"}
         navflag={true}
         data={specialOfferData}
       />
+
+      </Box>
       <ProductComponent
         data={hairProductData}
         flexbasis={"50%"}
@@ -47,7 +52,7 @@ function App() {
         buttontext={"Shop Now"}
         controlsflexDirection={"row"}
         controlsjustifyContent={"space-between"}
-        raduis={'50%'}
+        radius={'50%'}
       />
       <ProductComponent
         data={productData}
@@ -61,6 +66,7 @@ function App() {
         navflag={false}
         data={specialOfferData}
       />
+      <CollectionBanner />
       <ProductComponent
         data={infraData}
         flexbasis={""}
@@ -89,7 +95,8 @@ function App() {
 
       </Box>
       <Footer/>
-    </ThemeProvider>
+    {/* // </ThemeProvider> */}
+    </>
   );
 }
 

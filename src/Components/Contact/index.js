@@ -1,4 +1,4 @@
-import { Box, Typography } from '@mui/material'
+import { Box, Checkbox, FormControlLabel, Typography } from '@mui/material'
 import React from 'react';
 import Logo from "../../../src/assets/header/ColouredELogo-01.svg";
 import twitter from '../../assets/contact/twitter.svg'
@@ -28,7 +28,7 @@ export default function Contact() {
 
         </Box>
         <Box>
-            <Typography variant='subtitle2'>Shop</Typography>
+            <Typography variant='subtitle2' sx={{fontWeight:'bold'}}>Shop</Typography>
             <ul style={{listStyleType:'none',padding:0,margin:0}}>
                 {
                     topnavlinks.map((nav)=><li key={nav.id}> <Typography variant='caption'>{nav.link}</Typography></li>)
@@ -37,7 +37,7 @@ export default function Contact() {
 
         </Box>
         <Box>
-            <Typography variant='subtitle2'>Useful Links</Typography>
+            <Typography variant='subtitle2' sx={{fontWeight:'bold'}}>Useful Links</Typography>
             <ul style={{listStyleType:'none',padding:0,margin:0}}>
                 {
                     topnavlinks.map((nav)=><li key={nav.id}> <Typography variant='caption'>{nav.link}</Typography></li>)
@@ -46,13 +46,28 @@ export default function Contact() {
 
         </Box>
         <Box>
-            <Typography variant='subtitle2'>Customer Service</Typography>
+            <Typography variant='subtitle2' sx={{fontWeight:'bold'}}>Customer Service</Typography>
             <ul style={{listStyleType:'none',padding:0,margin:0}}>
                 {
                     topnavlinks.map((nav)=><li key={nav.id}> <Typography variant='caption'>{nav.link}</Typography></li>)
                 }
             </ul>
 
+        </Box>
+        <Box width={'40vh'} display={'flex'} flexDirection={'column'} gap={2}>
+            <Typography variant='subtitle2' sx={{fontWeight:'bold'}}>Subscribe to our newsletter</Typography>
+            <Box sx={{borderRadius:5,border:'1px solid black'}}>
+                <Typography variant='subtitle2' sx={{ml:2,py:0.5}}>Name</Typography>
+            </Box>
+            <Box sx={{borderRadius:5,border:'1px solid black'}}>
+                <Typography variant='subtitle2' sx={{ml:2,py:0.5}}>Email</Typography>
+            </Box>
+            <Box>
+            <FormControlLabel control={<Checkbox  sx={{ '& .MuiSvgIcon-root': { fontSize: 18 } }} />} label={ <Typography variant='caption'>I agree to all marketing communications</Typography> } />
+            </Box>
+            <Box sx={{borderRadius:5,border:'1px solid black',backgroundColor:'#000',cursor:'pointer'}} alignSelf={'flex-end'} padding={0.5} paddingX={1}>
+                <Typography variant='button' sx={{color:'#fff'}}>Submit</Typography>
+            </Box>
         </Box>
     </Box>
   )

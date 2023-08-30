@@ -2,8 +2,9 @@ import { Box, Typography } from '@mui/material'
 import React from 'react'
 
 export default function Card({imgSrc,subtitle,title,price,rating,radius,subtitleboldFlag}) {
+  console.log(radius);
   return (
-    <Box display={'flex'} flexDirection={'column'} alignItems={'flex-start'} >
+    <Box display={'flex'} flexDirection={'column'} alignItems={'flex-start'} sx={{padding: '0 1.5rem'}} >
         <img src={imgSrc}  alt={title} width={'200px'} height={'200px'} style={{borderRadius:radius}} />
         <Typography variant='overline' sx={{fontWeight:subtitleboldFlag,color:'gray'}} >{subtitle}</Typography>
         <Typography variant='caption' sx={{fontWeight:'bold'}} >{title}</Typography>
