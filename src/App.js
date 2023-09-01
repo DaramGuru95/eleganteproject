@@ -14,10 +14,12 @@ import {
   infraData,
   productData,
 } from "./Components/HairproductShop/data";
-import { specialOfferData } from "./Components/Discover/data";
+import { specialOfferData, weekOfferData } from "./Components/Discover/data";
 import Footer from "./Components/Footer";
 import Contact from "./Components/Contact";
 import CollectionBanner from "./Components/Banner2";
+import { shopBy } from "./Components/ShopByCategory/ShopByCatData";
+import Latest from "./Components/Latest";
 
 function App() {
   return (
@@ -37,16 +39,19 @@ function App() {
       />
 
       </Box>
+      <Box  marginX={{lg:8}} > 
       <ProductComponent
         data={hairProductData}
-        flexbasis={"50%"}
-        imgWidth={"650px"}
+        flexbasis={{xs:'100%',md:'50%',lg:'30%',xl:'50%'}}
+        imgWidth={"550px"}
         imgHeight={"350px"}
-        gap={1}
+        gap={3}
       />
+      </Box>
+     
       <Shop
         flexdirection={"column"}
-        data={specialOfferData}
+        data={shopBy}
         title={"SHOP BY CATEGORY"}
         subtitle={""}
         buttontext={"Shop Now"}
@@ -56,7 +61,7 @@ function App() {
       />
       <ProductComponent
         data={productData}
-        flexbasis={""}
+        flexbasis={"28%"}
         imgWidth={"300px"}
         imgHeight={"450px"}
         gap={1}
@@ -64,7 +69,7 @@ function App() {
       <CarousalComponent
         header={"OFFERS OF THE WEEK"}
         navflag={false}
-        data={specialOfferData}
+        data={weekOfferData}
       />
       <CollectionBanner />
       <ProductComponent
@@ -74,21 +79,7 @@ function App() {
         imgHeight={"300px"}
         gap={1}
       />
-      <Box sx={{ overflow: "hidden" }}>
-        <Shop
-          flexdirection={"row"}
-          data={specialOfferData}
-          title={"LATEST"}
-          subtitle={
-            "Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut."
-          }
-          buttontext={"View All"}
-          subtitleboldFlag={""}
-          controlsflexDirection={"column"}
-          controlsjustifyContent={"space-between"}
-          radius={''}
-        />
-      </Box>
+     <Latest />
       <Divider sx={{margin:5,color:'#A0A0A076'}}  />
       <Box marginX={5}>
       <Contact/>

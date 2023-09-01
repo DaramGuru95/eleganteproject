@@ -5,7 +5,7 @@ import Banner2 from '../../assets/banner/banner3.png'
 export default function CollectionBanner() {
 
     return (<Box marginY={10} >
-        <Box display={'flex'}>
+        <Box display={'flex'}  flexDirection={{xs:'column',md:'row'}}>
                 <Box padding={10} margin={5}>
                 <Box display={'flex'} flexDirection={'column'} alignItems={'center'} justifyContent={'center'} gap={1} >
                     <Typography variant='h3' sx={{fontWeight:'bold'}}>Lorem ipsum dolor sit amet, consetetur</Typography>

@@ -1,11 +1,11 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { Box } from "@mui/material";
 import Card from "./Card";
 import LeftCarusoalButton from "../CarsoulControlButtons/LeftCarusolButton";
 import RightCarusoalButton from "../CarsoulControlButtons/RightCarusoalButton";
 
 export default function CardCarsoul({radius,data,subtitleboldFlag, carousalButtonsControlFlag}) {
-  console.log(radius);
+
   const carouselRef = useRef(null);
 
 
@@ -14,13 +14,16 @@ export default function CardCarsoul({radius,data,subtitleboldFlag, carousalButto
       display={"flex"}
       alignItems={"center"}
       justifyContent={"space-around"}
-      gap={4}
+      gap={5.5}
       marginX={4}
       paddingX={10}
+     
     >
 
 
 {  carousalButtonsControlFlag &&  <LeftCarusoalButton carouselRef={carouselRef} />}
+
+  
 
       <Box
         ref={carouselRef}
@@ -28,7 +31,6 @@ export default function CardCarsoul({radius,data,subtitleboldFlag, carousalButto
         display={"flex"}
         marginX={5}
         gap={2}
-        
         sx={{
           overflowX: "hidden",
           
@@ -47,6 +49,13 @@ export default function CardCarsoul({radius,data,subtitleboldFlag, carousalButto
           />
         ))}
       </Box>
+      {
+   !carousalButtonsControlFlag && <Box display={'flex'}  gap={2}  sx={{top:-170,position:'relative',right:40}} >
+<LeftCarusoalButton carouselRef={carouselRef} />
+<RightCarusoalButton carouselRef={carouselRef} />
+
+   </Box>
+  }
 
    
      {carousalButtonsControlFlag && <RightCarusoalButton carouselRef={carouselRef} />}

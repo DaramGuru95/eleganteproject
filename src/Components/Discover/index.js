@@ -26,7 +26,7 @@ export default function CarousalComponent({ header, navflag, data }) {
     <Box
       marginTop={10}
       width={"100%"}
-      height={"60vh"}
+      height={navflag ?"60vh" : '80vh'}
       display={"flex"}
       flexDirection={"column"}
       justifyContent={'center'}
@@ -36,15 +36,26 @@ export default function CarousalComponent({ header, navflag, data }) {
 
     
 {
-   navflag ?    <TabContext value={value} >
-          <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-            <TabList onChange={handleChange} aria-label="lab API tabs example" textColor="#101820"
+   navflag ?    <TabContext value={value}>
+          <Box>
+            <TabList onChange={handleChange} aria-label="lab API tabs example" textColor="#101820" indicatorColor="#000"
               TabIndicatorProps={{
                 style: {
-                  background: '#FFAA4D 0% 0% no-repeat padding-box',
-                  border: '1px solid #FFAA4D',
-                  opacity: 1,
+                  '.Mui-selected': {
+                    fontWeight: 'bold',
+                  },
+                  border: 'none',
+      height: '5px',
+      width:'40px',
+     
+      background: 'transparent',
+      backgroundImage: 'linear-gradient(25deg, transparent 33%, #FFAA4D 33%, #FFAA4D 66%, transparent 66%)',
+      backgroundPosition: 'center',
+      backgroundRepeat: 'repeat-x',
+      backgroundSize: '5px 4px',
+      margin:'auto'
                 }
+
               }}
               centered sx={{ boxShadow: '0 4px 0 -2px white',backgroundColor:'#1018200D' }}  >
               <Tab label="Special Offers" value="1" />
@@ -53,35 +64,60 @@ export default function CarousalComponent({ header, navflag, data }) {
             </TabList>
 
           </Box>
-          <TabPanel value="1">
+          <TabPanel value="1" sx={{margin:0,padding:0}}>
+            <Box width={'100%'} height={'15vh'} sx={{backgroundColor:'#1018200D'}} position={'absolute'}  />
+
+          
 
             <Box
               width={"100%"}
               height={"40vh"}
+              position={'relative'}
+              sx={{top:25}}
+
             >
               <CardCarsoul data={specialOfferData} radius={undefined}  carousalButtonsControlFlag={true} />
             </Box>
           </TabPanel>
-          <TabPanel value="2">
+          <TabPanel value="2" sx={{margin:0,padding:0}}>
+          <Box width={'100%'} height={'15vh'} sx={{backgroundColor:'#1018200D'}} position={'absolute'}  />
+
             <Box
-             
+             position={'relative'}
+             sx={{top:25}}
               width={"100%"}
               height={"40vh"}
             >
               <CardCarsoul data={cardData} radius={undefined}  carousalButtonsControlFlag={true} />
             </Box>
           </TabPanel>
-          <TabPanel value="3">
+          <TabPanel value="3" sx={{margin:0,padding:0}}>
+          <Box width={'100%'} height={'15vh'} sx={{backgroundColor:'#1018200D'}} position={'absolute'}  />
+
             <Box
               width={"100%"}
               height={"40vh"}
-              
+              position={'relative'}
+              sx={{top:25}}
             >
               <CardCarsoul data={productData}  radius={undefined}  carousalButtonsControlFlag={true}/>
             </Box>
 
           </TabPanel>
-        </TabContext>  : <CardCarsoul data={specialOfferData}  radius={undefined}  carousalButtonsControlFlag={true}  />}
+        </TabContext>  : 
+        <>
+        
+
+<Box
+  width={"100%"}
+  height={"40vh"}
+  position={'relative'}
+  sx={{top:-75}}
+>
+<CardCarsoul data={data}  radius={undefined}  carousalButtonsControlFlag={true}  />
+</Box>
+        </>
+       }
         </Box>
 
 

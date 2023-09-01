@@ -3,6 +3,6 @@ import { Box } from '@mui/material';
 
 export default function Footer() {
   return (
-    <Box width={'100%'} height={'2vh'} sx={{backgroundColor:'#000'}}/>
+    <Box width={'100%'} height={'2vh'} sx={{backgroundColor:'#000',bottom:0,position:'fixed'}}/>
   )
 }

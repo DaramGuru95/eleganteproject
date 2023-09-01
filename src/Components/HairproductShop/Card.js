@@ -14,11 +14,11 @@ export default function HariProductCard({ imgSrc, title, subtitle,imgHeight,imgW
           display={"flex"}
           justifyContent={"center"}
           alignItems={"center"}
-          sx={{ borderRadius: 5, border: "2px solid black" }}
+          sx={{ borderRadius: 5, border: "2px solid black",cursor:'pointer' }}
           paddingX={3}
           paddingY={0.5}
         >
-          <Typography variant="caption">Shop Now</Typography>
+          <Typography variant="caption" >Shop Now</Typography>
         </Box>
       </Box>
     </Box>
