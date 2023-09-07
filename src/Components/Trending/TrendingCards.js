@@ -6,7 +6,7 @@ import Card from './Card';
 
 export default function TrendingCards() {
   return (
-    <Box display={'flex'} gap={12}>
+    <Box display={'flex'} flexWrap={'wrap'} gap={12}  justifyContent={'center'}>
        {
         cardData.map((card)=><Card key={card.id} title={card.title} imgSrc={card.imgSrc} subtitle={card.subtitle} />)
        }

@@ -36,9 +36,14 @@ export default function CarousalComponent({ header, navflag, data }) {
 
     
 {
-   navflag ?    <TabContext value={value}>
+   navflag ?    <TabContext value={value}
+  
+   >
           <Box>
             <TabList onChange={handleChange} aria-label="lab API tabs example" textColor="#101820" indicatorColor="#000"
+            //  variant="scrollable"
+            //  scrollButtons
+            //  allowScrollButtonsMobile
               TabIndicatorProps={{
                 style: {
                   '.Mui-selected': {

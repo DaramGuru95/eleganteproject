@@ -42,6 +42,7 @@ export default function Latest() {
                         display={"flex"}
                         alignItems={"center"}
                         onClick={scrollLeft}
+                        paddingX={0.5}
                     >
                         <ArrowBackIcon />
                     </Box>
@@ -50,6 +51,7 @@ export default function Latest() {
                         display={"flex"}
                         alignItems={"center"}
                         onClick={scrollRight}
+                        paddingX={0.5}
                     >
                         <ArrowForwardIcon />
                     </Box>
@@ -72,7 +74,8 @@ export default function Latest() {
         width={"100%"}
         display={"flex"}
         marginX={5}
-        gap={7}
+        justifyContent={'flex-start'}
+        gap={{xs:4,sm:4,md:7}}
         sx={{
           overflowX: "hidden",}} >
                

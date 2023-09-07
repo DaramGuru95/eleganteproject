@@ -1,11 +1,17 @@
 import React from "react";
-import { Box, Grid, Typography } from "@mui/material";
+import { Box, Button, Grid, Typography } from "@mui/material";
 import BannerImg from "../../assets/banner/banner1.png";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 export default function Banner() {
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
   return (
-    <Box display={"flex"} flexDirection={{ xs: 'column', md: 'row' }} width={"100%"} height={"80vh"}>
-      <Grid container mt={2} mb={2}>
+    <>
+    {
+      matches ?  <Box display={"flex"} flexDirection={{ xs: 'column', md: 'row' }} width={"100%"} height={"80vh"}>
+      <Grid container mb={2}>
         <Grid item xs={12} md={4}>
           <Box
             flexBasis={{ xs: "100%", md: "40%" }}
@@ -37,7 +43,7 @@ export default function Banner() {
         </Grid>
 
         <Grid item xs={12} md={8}>
-          <Box position={'relative'} marginTop={{ xs: -2, md: -14,lg:-11.5,xl:-14}} height={'80vh'}>
+          
             <img
               src={BannerImg}
               alt="banner"
@@ -45,9 +51,38 @@ export default function Banner() {
               width={"100%"}
               style={{ maxWidth: '100%' }}
             />
-          </Box>
         </Grid>
       </Grid>
+    </Box> :<Box width={'100%'} margin={0} height={'50vh'}>
+      <Box sx={{position: 'absolute',
+      display:'flex',
+      alignItems:'center',
+      justifyContent:'center',
+        width: '100%',
+        height: '50%',
+        backgroundImage: ` linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${BannerImg})`,
+        backgroundPosition: 'center',
+        backgroundSize: 'cover',
+        backgroundRepeat: 'no-repeat'}} height={'50vh'}>
+ <Box  display={'flex'} flexDirection={'column'} alignItems={'center'} >
+      <Typography variant="h4" sx={{ textAlign:'center',fontWeight:'bold',color:'#fff',}}>
+              Shop New Arrivals
+            </Typography>
+
+
+            <Box display={'flex'} justifyContent={'center'}>
+
+             <Button variant="contained" color="error"  sx={{borderRadius:5,color:'#fff'}}>Shop Now</Button>
+            </Box>
+           
+            
+      </Box>
+      </Box>
+     
+      
     </Box>
+    }
+    </>
+   
   );
 }

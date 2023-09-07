@@ -1,5 +1,4 @@
 import { Box, Divider, ThemeProvider } from "@mui/material";
-import theme from "./Theme";
 import TopNavigation from "./Components/TopNavigation";
 import Header from "./Components/Header";
 import MainNavigation from "./Components/MainNavigation";
@@ -20,34 +19,32 @@ import Contact from "./Components/Contact";
 import CollectionBanner from "./Components/Banner2";
 import { shopBy } from "./Components/ShopByCategory/ShopByCatData";
 import Latest from "./Components/Latest";
+import { useTheme } from '@mui/material/styles';
+import useMediaQuery from '@mui/material/useMediaQuery';
 
 function App() {
+
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up('md'));
   return (
     // <ThemeProvider theme={theme}>
-    <>
+    <Box width={'100%'} >
       <TopNavigation />
       <Header />
-      <MainNavigation />
+     {matches && <MainNavigation />}
       <Discount />
       <Banner />
       <Trending />
-      <Box>
       <CarousalComponent
         header={"Discover"}
         navflag={true}
         data={specialOfferData}
       />
 
-      </Box>
-      <Box  marginX={{lg:8}} > 
+    
       <ProductComponent
         data={hairProductData}
-        flexbasis={{xs:'100%',md:'50%',lg:'30%',xl:'50%'}}
-        imgWidth={"550px"}
-        imgHeight={"350px"}
-        gap={3}
       />
-      </Box>
      
       <Shop
         flexdirection={"column"}
@@ -87,7 +84,7 @@ function App() {
       </Box>
       <Footer/>
     {/* // </ThemeProvider> */}
-    </>
+    </Box>
   );
 }
 
