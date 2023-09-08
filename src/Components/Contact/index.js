@@ -23,7 +23,7 @@ export default function Contact() {
                 <img src={payment} alt='logo' width={'70px'} height={'20px'} />
                 <Box display={'flex'} flexDirection={'column'}>
                     <img src={cpyright} alt='logo' width={'120px'} height={'50px'} />
-                    <Typography variant='caption'>Site Developed by Guru</Typography>
+                    <Typography variant='caption'>Site Developed by Daram Guraiah</Typography>
                 </Box>
 
             </Box>
