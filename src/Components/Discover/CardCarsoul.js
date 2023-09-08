@@ -50,7 +50,7 @@ export default function CardCarsoul({radius,data,subtitleboldFlag, carousalButto
         ))}
       </Box>
       {
-   !carousalButtonsControlFlag && <Box display={'flex'}  gap={2}  sx={{top:-170,position:'relative',right:40}} >
+   !carousalButtonsControlFlag && <Box display={'flex'}  gap={2}  sx={{top:-185,position:'relative',right:40}} >
 <LeftCarusoalButton carouselRef={carouselRef} />
 <RightCarusoalButton carouselRef={carouselRef} />
 

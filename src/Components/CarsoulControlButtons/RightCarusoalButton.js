@@ -9,7 +9,7 @@ export default function RightCarusoalButton({carouselRef}){
     const scrollRight = () => {
         if (carouselRef.current) {
           carouselRef.current.scrollBy({
-            left: 200, 
+            left: 250, 
             behavior: "smooth",
           });
         }

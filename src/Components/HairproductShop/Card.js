@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, Button, Typography } from "@mui/material";
+import { Box,  Typography } from "@mui/material";
 import { useTheme } from '@mui/material/styles';
 import useMediaQuery from '@mui/material/useMediaQuery';
 
@@ -11,8 +11,8 @@ export default function HariProductCard({ imgSrc, title, subtitle,imgHeight,imgW
 
   return (
     <>
-   { matches ? <Box display={"flex"} flexDirection={"column"} gap={2} padding={2}>
-      <img src={imgSrc} alt={title} width={'100%'} height={'100%'} />
+   { matches ? <Box display={"flex"} flexDirection={"column"} gap={2} padding={1}>
+      <img src={imgSrc} alt={title} width={imgHeight} height={imgWidth} />
       <Typography variant="subtitle1" sx={{ fontWeight: "bold" }}>
         {title}
       </Typography>

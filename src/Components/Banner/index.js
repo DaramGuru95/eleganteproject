@@ -10,7 +10,7 @@ export default function Banner() {
   return (
     <>
     {
-      matches ?  <Box display={"flex"} flexDirection={{ xs: 'column', md: 'row' }} width={"100%"} height={"80vh"}>
+      matches ?  <Box display={"flex"} flexDirection={{ xs: 'column', md: 'row' }} width={"100%"} height={"70vh"}>
       <Grid container mb={2}>
         <Grid item xs={12} md={4}>
           <Box
@@ -47,7 +47,7 @@ export default function Banner() {
             <img
               src={BannerImg}
               alt="banner"
-              height={"100%"}
+              height={"80%"}
               width={"100%"}
               style={{ maxWidth: '100%' }}
             />

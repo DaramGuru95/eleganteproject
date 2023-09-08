@@ -9,7 +9,7 @@ export default function LeftCarusoalButton({carouselRef}){
     const scrollLeft = () => {
         if (carouselRef.current) {
           carouselRef.current.scrollBy({
-            left: -200, // Adjust the value based on your card width
+            left: -250, // Adjust the value based on your card width
             behavior: "smooth",
           });
         }

@@ -11,7 +11,7 @@ export default function Latest() {
     const scrollLeft = () => {
         if (carouselRef.current) {
             carouselRef.current.scrollBy({
-                left: -200, // Adjust the value based on your card width
+                left: -250, // Adjust the value based on your card width
                 behavior: "smooth",
             });
         }
@@ -20,7 +20,7 @@ export default function Latest() {
     const scrollRight = () => {
         if (carouselRef.current) {
             carouselRef.current.scrollBy({
-                left: 200, // Adjust the value based on your card width
+                left: 250, // Adjust the value based on your card width
                 behavior: "smooth",
             });
         }
@@ -31,11 +31,13 @@ export default function Latest() {
             flexDirection={{ xs: 'column', md: 'row' }}
             alignItems={'center'}
             marginY={8}
+            marginX={{md:6}}
+            padding={{xs:4,md:10}}
         >
             <Box flexBasis={'20%'}>
-                <Box display={'flex'} flexDirection={'column'} padding={5} gap={2} >
+                <Box display={'flex'} flexDirection={'column'} padding={2} gap={2} >
                 <Typography variant="h6" sx={{fontWeight:'bold'}}>LATEST</Typography>
-                <Typography variant="caption" sx={{ color: '#101820',lineBreak:'strict' }} >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</Typography>
+                <Typography variant="caption" sx={{ color: '#101820',lineBreak:'strict',textAlign:'left' }} >Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut.</Typography>
                 <Box display={'flex'} gap={1}>
                     <Box
                         sx={{ borderRadius: 5, border: "1px solid black", cursor: "pointer" }}
@@ -70,12 +72,11 @@ export default function Latest() {
                 </Box>
 
             </Box>
-            <Box flexBasis={'70%'} marginLeft={10}  ref={carouselRef}
+            <Box flexBasis={'70%'} marginLeft={{xs:0,md:10}}  ref={carouselRef}
         width={"100%"}
         display={"flex"}
-        marginX={5}
         justifyContent={'flex-start'}
-        gap={{xs:4,sm:4,md:7}}
+        gap={{xs:3,sm:4,md:8}}
         sx={{
           overflowX: "hidden",}} >
                

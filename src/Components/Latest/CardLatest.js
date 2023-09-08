@@ -12,7 +12,7 @@ export default function CardLatest({imgSrc,title,date}) {
     {
       matches ?
     <Box display={'flex'} flexDirection={'column'} alignItems={'flex-start'}  >
-       <img src={imgSrc} alt={title} width={'300px'} height={'300px'} />
+       <img src={imgSrc} alt={title} width={'250px'} height={'250px'} />
        <Typography variant='subtitle2' sx={{color:'#1018204D'}}>{date}</Typography>
        <Typography variant='subtitle1' sx={{fontWeight:'bold'}}>{title}</Typography>
     </Box>:

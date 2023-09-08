@@ -12,7 +12,7 @@ import { topnavlinks } from '../Header/topnavlinks';
 
 export default function Contact() {
     return (
-        <Box width={'100%'} display={'flex'} gap={{ xs: 3, lg: 15 }} height={'35vh'} flexWrap={{ xs: 'wrap', lg: 'nowrap' }} >
+        <Box width={'100%'} display={'flex'} gap={{ xs: 3, lg: 10 }} height={'45vh'} flexWrap={{ xs: 'wrap', lg: 'nowrap' }} justifyContent={'center'}  >
             <Box display={'flex'} flexDirection={'column'} gap={1}>
                 <img src={Logo} alt='logo' width={'231px'} height={'89px'} />
                 <Box display={'flex'} gap={3}>

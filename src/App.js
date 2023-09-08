@@ -27,24 +27,30 @@ function App() {
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
   return (
-    // <ThemeProvider theme={theme}>
     <Box width={'100%'} >
       <TopNavigation />
       <Header />
      {matches && <MainNavigation />}
       <Discount />
       <Banner />
+      <Box marginTop={12}>
+
       <Trending />
+      </Box>
       <CarousalComponent
         header={"Discover"}
         navflag={true}
         data={specialOfferData}
       />
 
-    
+       <Box marginX={{lg:6}}>
       <ProductComponent
         data={hairProductData}
+        imgWidth={'100%'}
+        imgHeight={'100%'}
       />
+
+       </Box>
      
       <Shop
         flexdirection={"column"}
@@ -59,8 +65,8 @@ function App() {
       <ProductComponent
         data={productData}
         flexbasis={"28%"}
-        imgWidth={"300px"}
-        imgHeight={"450px"}
+        imgWidth={"350px"}
+        imgHeight={"300px"}
         gap={1}
       />
       <CarousalComponent
@@ -83,7 +89,6 @@ function App() {
 
       </Box>
       <Footer/>
-    {/* // </ThemeProvider> */}
     </Box>
   );
 }

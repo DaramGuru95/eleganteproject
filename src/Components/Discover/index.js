@@ -9,7 +9,7 @@ import Tab from '@mui/material/Tab';
 import TabContext from '@mui/lab/TabContext';
 import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
-import { specialOfferData } from "./data";
+import { specialOfferData, trendingNavData, weekOfferData } from "./data";
 import { cardData } from "../Trending/cardData";
 import { productData } from "../HairproductShop/data";
 
@@ -42,8 +42,8 @@ export default function CarousalComponent({ header, navflag, data }) {
           <Box>
             <TabList onChange={handleChange} aria-label="lab API tabs example" textColor="#101820" indicatorColor="#000"
             //  variant="scrollable"
-            //  scrollButtons
-            //  allowScrollButtonsMobile
+             scrollButtons='auto'
+             allowScrollButtonsMobile
               TabIndicatorProps={{
                 style: {
                   '.Mui-selected': {
@@ -93,7 +93,7 @@ export default function CarousalComponent({ header, navflag, data }) {
               width={"100%"}
               height={"40vh"}
             >
-              <CardCarsoul data={cardData} radius={undefined}  carousalButtonsControlFlag={true} />
+              <CardCarsoul data={trendingNavData} radius={undefined}  carousalButtonsControlFlag={true} />
             </Box>
           </TabPanel>
           <TabPanel value="3" sx={{margin:0,padding:0}}>
@@ -105,7 +105,7 @@ export default function CarousalComponent({ header, navflag, data }) {
               position={'relative'}
               sx={{top:25}}
             >
-              <CardCarsoul data={productData}  radius={undefined}  carousalButtonsControlFlag={true}/>
+              <CardCarsoul data={weekOfferData}  radius={undefined}  carousalButtonsControlFlag={true}/>
             </Box>
 
           </TabPanel>
