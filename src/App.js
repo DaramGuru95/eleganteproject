@@ -1,4 +1,4 @@
-import { Box, Divider, ThemeProvider } from "@mui/material";
+import { Box, Divider } from "@mui/material";
 import TopNavigation from "./Components/TopNavigation";
 import Header from "./Components/Header";
 import MainNavigation from "./Components/MainNavigation";
@@ -26,16 +26,16 @@ function App() {
 
   const theme = useTheme();
   const matches = useMediaQuery(theme.breakpoints.up('md'));
+
   return (
     <Box width={'100%'} >
       <TopNavigation />
       <Header />
-     {matches && <MainNavigation />}
+      {matches && <MainNavigation />}
       <Discount />
       <Banner />
       <Box marginTop={12}>
-
-      <Trending />
+        <Trending />
       </Box>
       <CarousalComponent
         header={"Discover"}
@@ -43,15 +43,15 @@ function App() {
         data={specialOfferData}
       />
 
-       <Box marginX={{lg:6}}>
-      <ProductComponent
-        data={hairProductData}
-        imgWidth={'100%'}
-        imgHeight={'100%'}
-      />
+      <Box marginX={{ lg: 6 }}>
+        <ProductComponent
+          data={hairProductData}
+          imgWidth={'100%'}
+          imgHeight={'100%'}
+        />
 
-       </Box>
-     
+      </Box>
+
       <Shop
         flexdirection={"column"}
         data={shopBy}
@@ -82,13 +82,13 @@ function App() {
         imgHeight={"300px"}
         gap={1}
       />
-     <Latest />
-      <Divider sx={{margin:5,color:'#A0A0A076'}}  />
+      <Latest />
+      <Divider sx={{ margin: 5, color: '#A0A0A076' }} />
       <Box marginX={5}>
-      <Contact/>
+        <Contact />
 
       </Box>
-      <Footer/>
+      <Footer />
     </Box>
   );
 }

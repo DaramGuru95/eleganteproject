@@ -1,6 +1,5 @@
 import { Box, Typography } from "@mui/material";
 import React from "react";
-import Navigation from "./Navigation";
 
 export default function DiscoverNav({ header, navflag }) {
   return (
